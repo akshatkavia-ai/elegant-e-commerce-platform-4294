@@ -1,0 +1,71 @@
+:root {
+  --color-ffffff: #ffffff;
+  --color-000000: #000000;
+  --color-161719: #161719;
+  --color-1a1b36: #1a1b36;
+  --color-dadada: #dadada;
+  --color-4cd964: #4cd964;
+  --color-191d31: #191d31;
+  --color-565353: #565353;
+  --color-676666: #676666;
+  --color-626262: #626262;
+  --color-1e1c1c: #1e1c1c;
+  --color-3f3f3f: #3f3f3f;
+  --color-454242: #454242;
+  --color-4a4848: #4a4848;
+  --color-343333: #343333;
+  --color-686464: #686464;
+  --color-3c3b3b: #3c3b3b;
+  --color-454545: #454545;
+  --color-454343: #454343;
+  --color-403e3e: #403e3e;
+
+  --shadow-0: 0 4px 4px 0 rgba(0,0,0,1);
+
+  --font-inter: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --font-ocra-extended: "OCR A Extended", "OCR A", "OCR-A", "OCR-A BT", monospace;
+  --font-ocra: "OCR-A", "OCR A", "OCR-A BT", monospace;
+  --font-ocra-bt: "OCR-A BT", "OCR A", "OCR-A", monospace;
+  --font-anonymous-pro: "Anonymous Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+
+  --lh-18: 18px;
+  --ls--0-165: -0.165px;
+
+  --screen-width: 390px;
+  --screen-height: 844px;
+}
+
+/* Core helpers used by the HomeScreen */
+.screen { position: relative; width: var(--screen-width); height: var(--screen-height); overflow: hidden; background: var(--color-ffffff); }
+.abs { position: absolute; }
+.img-cover { width: 100%; height: 100%; object-fit: cover; display: block; }
+.img-contain { width: 100%; height: 100%; object-fit: contain; display: block; }
+
+/* Style tokens heavily used */
+.style-0 { background: var(--color-ffffff); }
+.style-2 { background: var(--color-1a1b36); }
+.style-4 { background: var(--color-161719); border: 0 solid var(--color-4cd964); border-radius: 1.6px; }
+.style-5 { background: var(--color-ffffff); border-radius: 1.2px; }
+.style-6 { background: var(--color-191d31); border-radius: 100px; }
+.style-43 { background: var(--color-ffffff); border: 0.4px solid var(--color-000000); border-radius: 16px; box-shadow: var(--shadow-0); }
+.style-44 { background: var(--color-ffffff); border: 0.2px solid var(--color-000000); border-radius: 14px; box-shadow: var(--shadow-0); }
+.style-45 { background: var(--color-ffffff); border: 0.1px solid var(--color-000000); border-radius: 20px; box-shadow: var(--shadow-0); }
+.style-46 { background: var(--color-000000); border: 1px solid var(--color-000000); border-radius: 30px; box-shadow: var(--shadow-0); }
+.style-24 { background: var(--color-000000); border-radius: 14px; }
+.style-15 { border-radius: 30px; }
+
+/* Typography approximations */
+.typo-31 { font-family: var(--font-inter); font-size: 15px; font-weight: 600; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-161719); text-align: center; }
+.typo-32 { font-family: var(--font-ocra-extended); font-size: 23px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-33 { font-family: var(--font-ocra-extended); font-size: 18px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-565353); text-align: center; }
+.typo-36 { font-family: var(--font-ocra-extended); font-size: 18px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-676666); text-align: center; }
+.typo-37 { font-family: var(--font-ocra-extended); font-size: 18px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-38 { font-family: var(--font-ocra-extended); font-size: 10px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-39 { font-family: var(--font-anonymous-pro); font-size: 8px; font-weight: 400; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-626262); text-align: center; }
+.typo-41 { font-family: var(--font-ocra-bt); font-size: 13px; font-weight: 400; line-height: 14.27px; letter-spacing: var(--ls--0-165); color: var(--color-ffffff); text-align: center; }
+.typo-42 { font-family: var(--font-ocra); font-size: 12px; font-weight: 500; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-ffffff); text-align: center; }
+.typo-43 { font-family: var(--font-ocra); font-size: 12px; font-weight: 500; line-height: var(--lh-18); letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-44 { font-family: var(--font-ocra); font-size: 8px; font-weight: 500; line-height: 9.16px; letter-spacing: var(--ls--0-165); color: var(--color-3f3f3f); text-align: center; }
+.typo-45 { font-family: var(--font-ocra); font-size: 6px; font-weight: 500; line-height: 6.87px; letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-49 { font-family: var(--font-ocra); font-size: 24px; font-weight: 500; line-height: 27.48px; letter-spacing: var(--ls--0-165); color: var(--color-000000); text-align: center; }
+.typo-50 { font-family: var(--font-ocra); font-size: 17px; font-weight: 500; line-height: 19.465px; letter-spacing: var(--ls--0-165); color: var(--color-ffffff); text-align: center; }

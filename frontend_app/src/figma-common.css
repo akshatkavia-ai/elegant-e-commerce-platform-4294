@@ -1,0 +1,10 @@
+/* Disabled direct import to public assets to avoid CRA build resolution errors.
+   The app uses figma-common-fallback.css for tokens. If you later copy assets
+   into public/assets, consider adding a <link rel="stylesheet" href="/assets/common.css">
+   in public/index.html instead of importing from within src. */
+
+/* Keep placeholder custom properties for screen sizing to match Figma frame */
+:root {
+  --screen-width: 390px;
+  --screen-height: 844px;
+}

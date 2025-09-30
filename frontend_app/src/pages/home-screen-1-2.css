@@ -1,0 +1,8 @@
+.status-bar {
+  z-index: 10;
+}
+.typo-31, .typo-32, .typo-33, .typo-34, .typo-35, .typo-36, .typo-37, .typo-38, .typo-39, .typo-40, .typo-41 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

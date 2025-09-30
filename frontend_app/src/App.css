@@ -1,126 +1,27 @@
-:root {
-  --primary: #F97316;
-  --secondary: #10B981;
-  --success: #10B981;
-  --error: #EF4444;
-  --background: #000000;
-  --surface: #1F2937;
-  --text: #FFFFFF;
-}
-
+/* Keep the app container neutral so Figma common.css can control look */
 .App {
   min-height: 100vh;
-  background: var(--background);
-  color: var(--text);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-}
-
-.navbar {
-  background: var(--surface);
-  padding: 1rem 2rem;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(249, 115, 22, 0.2);
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--color-ffffff, #ffffff);
+  color: var(--color-000000, #000000);
+  font-family: var(--font-ocra-extended, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  padding: 16px 0;
 }
 
-.brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--primary);
+/* Center the fixed 390x844 screen and allow it to be previewed as-is */
+.figmapreview-wrapper {
+  width: var(--screen-width, 390px);
+  height: var(--screen-height, 844px);
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-radius: 20px;
+  overflow: hidden;
 }
 
-.nav-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.nav-btn {
-  background: transparent;
-  border: 2px solid var(--primary);
-  color: var(--text);
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.nav-btn:hover {
-  background: var(--primary);
-}
-
-.main-content {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-h1 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(135deg, var(--primary), var(--text));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-align: center;
-}
-
-.featured-products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 2rem;
-  padding: 1rem;
-}
-
-.product-card {
-  background: var(--surface);
-  border-radius: 16px;
-  padding: 1rem;
-  text-align: center;
-  transition: transform 0.3s ease;
-  border: 1px solid rgba(249, 115, 22, 0.2);
-}
-
-.product-card:hover {
-  transform: translateY(-5px);
-}
-
-.product-image-placeholder {
-  width: 100%;
-  height: 200px;
-  background: linear-gradient(45deg, var(--surface), var(--background));
-  border-radius: 8px;
-  margin-bottom: 1rem;
-}
-
-.btn-primary {
-  background: var(--primary);
-  color: var(--text);
-  border: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  width: 100%;
-  margin-top: 1rem;
-}
-
-.btn-primary:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 20px rgba(249, 115, 22, 0.3);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 1rem;
-  }
-  
-  .main-content {
-    padding: 1rem;
-  }
-  
-  h1 {
-    font-size: 2rem;
-  }
+/* Avoid default element margins interfering with absolute layout inside screen */
+.figmapreview-wrapper .screen {
+  margin: 0;
+  padding: 0;
 }
