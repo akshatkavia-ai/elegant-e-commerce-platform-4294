@@ -1,0 +1,13 @@
+# Ignore build output, dependencies, and miscellaneous artifacts
+build/
+node_modules/
+coverage/
+dist/
+.tmp/
+.eslintcache
+
+# Ignore static assets and public if any
+public/
+
+# Ignore asset exports not part of app src
+../assets/
