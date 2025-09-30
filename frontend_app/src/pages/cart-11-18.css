@@ -1,0 +1,19 @@
+.screen {
+  /* Base tokens (size/background) come from figma-common.css and fallback */
+}
+
+/* Keep small texts crisp and avoid overflow */
+.typo-31, .typo-36, .typo-42, .typo-43, .typo-44, .typo-45, .typo-48, .typo-49, .typo-50 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* If this screen is rendered standalone in larger viewports, center similar to App wrapper */
+@media (max-width: 420px) {
+  :root {
+    /* ensure consistent screen size on small devices if needed */
+    --screen-width: 390px;
+    --screen-height: 844px;
+  }
+}
