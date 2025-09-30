@@ -1,0 +1,18 @@
+.screen {
+  /* Base tokens & colors are provided by src/figma-common.css and src/figma-common-fallback.css */
+}
+
+/* Keep small texts crisp and avoid overflow */
+.typo-31, .typo-50, .typo-52, .typo-54, .typo-55 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* If this screen is rendered standalone in larger viewports, keep the fixed dimensions */
+@media (max-width: 420px) {
+  :root {
+    --screen-width: 390px;
+    --screen-height: 844px;
+  }
+}
