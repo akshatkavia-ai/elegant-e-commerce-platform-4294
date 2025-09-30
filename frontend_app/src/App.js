@@ -1,47 +1,28 @@
-import React, { useState, useEffect } from 'react';
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
 // PUBLIC_INTERFACE
 function App() {
-  const [theme, setTheme] = useState('light');
-
-  // Effect to apply theme to document element
-  useEffect(() => {
-    document.documentElement.setAttribute('data-theme', theme);
-  }, [theme]);
-
-  // PUBLIC_INTERFACE
-  const toggleTheme = () => {
-    setTheme(prevTheme => prevTheme === 'light' ? 'dark' : 'light');
-  };
-
   return (
     <div className="App">
-      <header className="App-header">
-        <button 
-          className="theme-toggle" 
-          onClick={toggleTheme}
-          aria-label={`Switch to ${theme === 'light' ? 'dark' : 'light'} mode`}
-        >
-          {theme === 'light' ? '🌙 Dark' : '☀️ Light'}
-        </button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <p>
-          Current theme: <strong>{theme}</strong>
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav className="navbar">
+        <div className="brand">E-Commerce</div>
+        <div className="nav-links">
+          <button className="nav-btn">Shop</button>
+          <button className="nav-btn">Cart (0)</button>
+        </div>
+      </nav>
+      <main className="main-content">
+        <h1>Welcome to Our Store</h1>
+        <div className="featured-products">
+          <div className="product-card">
+            <div className="product-image-placeholder"></div>
+            <h2>Featured Product</h2>
+            <p>$99.99</p>
+            <button className="btn-primary">Add to Cart</button>
+          </div>
+        </div>
+      </main>
     </div>
   );
 }
