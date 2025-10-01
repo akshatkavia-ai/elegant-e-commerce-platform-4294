@@ -1,82 +1,63 @@
-# Lightweight React Template for KAVIA
+# Electric Orange Storefront (React)
 
-This project provides a minimal React template with a clean, modern UI and minimal dependencies.
+A bold, high-contrast e-commerce frontend built with React, featuring:
+- Product catalog grid and product detail pages
+- Shopping cart sidebar with quantity controls
+- Checkout page with Stripe Checkout scaffold
+- Mock REST API integration (easily swappable for real backend)
+- Electric Orange theme: black base with vibrant orange and green accents
 
-## Features
+## Quick start
 
-- **Lightweight**: No heavy UI frameworks - uses only vanilla CSS and React
-- **Modern UI**: Clean, responsive design with KAVIA brand styling
-- **Fast**: Minimal dependencies for quick loading times
-- **Simple**: Easy to understand and modify
+1) Install dependencies
+- npm install
 
-## Getting Started
+2) Configure environment variables
+- cp .env.example .env
+- Set REACT_APP_STRIPE_PUBLISHABLE_KEY when integrating with real Stripe + backend
 
-In the project directory, you can run:
+3) Run the app
+- npm start
+- Open http://localhost:3000
 
-### `npm start`
+## Project structure
 
-Runs the app in development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- src/
+  - App.js, App.css — App shell, theme, routes, layout
+  - index.js — React entry
+  - context/CartContext.js — Cart state with reducer and persistence
+  - data/products.js — Mock product data
+  - services/api.js — API placeholders simulating REST calls
+  - components/
+    - ProductCard.jsx, CartSidebar.jsx, QuantitySelector.jsx, Loading.jsx
+  - pages/
+    - HomePage.jsx — Catalog grid
+    - ProductDetailPage.jsx — Detail with Add to Cart
+    - CheckoutPage.jsx — Summary + Stripe redirect
+    - NotFoundPage.jsx
 
-### `npm test`
+## Stripe & backend integration
 
-Launches the test runner in interactive watch mode.
+- This project includes scaffolding for Stripe Checkout.
+- For production:
+  - Provide a backend endpoint to create a Checkout Session.
+  - Set REACT_APP_API_BASE_URL to your backend base URL.
+  - Return a sessionId and use stripe.redirectToCheckout({ sessionId }).
+  - Configure REACT_APP_STRIPE_PUBLISHABLE_KEY in your .env.
 
-### `npm run build`
+Without these, the app will simulate a successful redirect for demo purposes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Theming
 
-## Customization
+Theme tokens live in src/App.css. Key variables:
+- --primary: #F97316 (orange)
+- --secondary: #10B981 (green)
+- --background: #000000
+- --surface: #1F2937
+- --text: #FFFFFF
 
-### Colors
+Adjust these to tune the brand feeling while retaining strong contrast and rounded UI.
 
-The main brand colors are defined as CSS variables in `src/App.css`:
+## License
 
-```css
-:root {
-  --kavia-orange: #E87A41;
-  --kavia-dark: #1A1A1A;
-  --text-color: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.7);
-  --border-color: rgba(255, 255, 255, 0.1);
-}
-```
-
-### Components
-
-This template uses pure HTML/CSS components instead of a UI framework. You can find component styles in `src/App.css`. 
-
-Common components include:
-- Buttons (`.btn`, `.btn-large`)
-- Container (`.container`)
-- Navigation (`.navbar`)
-- Typography (`.title`, `.subtitle`, `.description`)
-
-## Learn More
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+MIT
