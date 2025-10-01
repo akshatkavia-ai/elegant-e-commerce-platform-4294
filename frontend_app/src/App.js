@@ -1,29 +1,36 @@
 import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import './theme.css';
 import './App.css';
+import Navbar from './components/Navbar';
+import { CartProvider } from './context/CartContext';
+import Home from './pages/Home';
+import ProductDetail from './pages/ProductDetail';
+import CartPage from './pages/CartPage';
+import Checkout from './pages/Checkout';
+import OrderSuccess from './pages/OrderSuccess';
 
 // PUBLIC_INTERFACE
 function App() {
+  /** Root application with routes: home, product detail, cart, checkout, and order success. */
   return (
-    <div className="App">
-      <nav className="navbar">
-        <div className="brand">E-Commerce</div>
-        <div className="nav-links">
-          <button className="nav-btn">Shop</button>
-          <button className="nav-btn">Cart (0)</button>
-        </div>
-      </nav>
-      <main className="main-content">
-        <h1>Welcome to Our Store</h1>
-        <div className="featured-products">
-          <div className="product-card">
-            <div className="product-image-placeholder"></div>
-            <h2>Featured Product</h2>
-            <p>$99.99</p>
-            <button className="btn-primary">Add to Cart</button>
-          </div>
-        </div>
-      </main>
-    </div>
+    <BrowserRouter>
+      <CartProvider>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/order/success" element={<OrderSuccess />} />
+          </Routes>
+        </main>
+        <footer className="footer">
+          <div className="container">© {new Date().getFullYear()} Electric Orange — Powered by bold design.</div>
+        </footer>
+      </CartProvider>
+    </BrowserRouter>
   );
 }
 

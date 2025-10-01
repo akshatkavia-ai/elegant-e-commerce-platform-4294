@@ -1,0 +1,1 @@
+# Assets copied at runtime by CI/deployment process if needed. Use /assets/* URLs in code.
